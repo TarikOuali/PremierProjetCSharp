@@ -8,10 +8,53 @@ namespace PremierProjetCSharp.ConsoleApp
     {
         static void Main(string[] args)
         {
+            var myLst = new List<int>()
+            {
+                1,2,3,4,5,6,7,8,9,10,11,12,13,14
+            };
+
+
+
+            IOeuvre o1 = new Livre();
+            IOeuvre o2 = new Podcast();
+
+            IOeuvre[] lst = new[] { o1, o2 };
+
+            foreach (IOeuvre item in lst)
+            {
+                switch (item)
+                {
+                    case var l when l is IReadable:
+                        ((IReadable)l).Read();
+                        break;
+                    case var p when p is IListenable:
+                        ((IListenable)p).Listen();
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+
+
+
+
+
+
+            ((Livre)o2).Annee = 2000;
+
+
+
+
+
+
+
+
+
             var cls = MaClasse.GetInstance();
             cls.CaptainAgeChanged += Cls_CaptainAgeChanged;
-            
-            
+
+
             cls.CaptainAgeChanged += Cls_CaptainAgeChanged2;
 
             Console.WriteLine("Quel est votre age ?");
