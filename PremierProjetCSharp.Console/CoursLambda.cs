@@ -35,6 +35,10 @@ namespace PremierProjetCSharp.ConsoleApp
             f2.Invoke("test");
 
 
+
+
+
+
             //var x1 = GetSum<short>(b: 5, a: 6);
             //var x2 = GetSum(b: 5.2, a: 6.4);
 
